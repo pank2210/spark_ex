@@ -1,0 +1,4 @@
+df -m
+ls -l
+uptime
+date

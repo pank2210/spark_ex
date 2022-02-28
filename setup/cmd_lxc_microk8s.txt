@@ -1,0 +1,17 @@
+
+echo "----------------------------------------------------------------------------"
+echo "Installing and configuring lxc, microk8s..."
+echo "----------------------------------------------------------------------------"
+
+sudo snap install hello-world
+hello-world
+sudo snap install multipass
+sudo snap install lxd
+
+sudo lxd init --auto --storage-create-device=/dev/sdb --storage-backend=zfs
+sudo lxc init ubuntu:focal microk8s --vm -c limits.memory=12GB -c limits.cpu=6
+sudo lxc config device override microk8s root size=40GB
+sudo lxc start microk8s
+sleep 90 # give the instance time to boot
+sudo lxc exec microk8s -- sudo snap install microk8s --classic
+sudo lxc exec microk8s -- sudo microk8s enable storage registry dns ingress

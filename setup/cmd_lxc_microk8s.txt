@@ -3,15 +3,30 @@ echo "--------------------------------------------------------------------------
 echo "Installing and configuring lxc, microk8s..."
 echo "----------------------------------------------------------------------------"
 
+echo "Installling multipass lxd"
 sudo snap install hello-world
 hello-world
 sudo snap install multipass
 sudo snap install lxd
 
-sudo lxd init --auto --storage-create-device=/dev/sdb --storage-backend=zfs
-sudo lxc init ubuntu:focal microk8s --vm -c limits.memory=12GB -c limits.cpu=6
+echo "Seting PATH and LD_LIBRARY_PATH"
+#echo "PATH=$PATH:/snap/lxd/current/bin:/snap/lxd/current/zfs-0.8/bin" >> ~/.profile
+#echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/snap/lxd/current/lib:/snap/lxd/current/lib/x86_64-linux-gnu:/snap/lxd/current/zfs-0.8/lib" >> ~/.profile
+#echo "export PATH" >> ~/.profile
+#echo "export LD_LIBRARY_PATH" >> ~/.profile
+
+echo "lxd Initialization"
+#sudo lxd init --auto --storage-create-device=/dev/sdb --storage-backend=zfs
+#sudo lxd init --auto 
+
+echo "lxd Initialization and configuration of microk8s"
+#sudo lxc init ubuntu:focal microk8s --vm -c limits.memory=12GB -c limits.cpu=6
 sudo lxc config device override microk8s root size=40GB
+
+echo "lxd start microk8s"
 sudo lxc start microk8s
-sleep 90 # give the instance time to boot
+
+echo "lxd setup nested microk8s"
+sleep 180 # give the instance time to boot
 sudo lxc exec microk8s -- sudo snap install microk8s --classic
 sudo lxc exec microk8s -- sudo microk8s enable storage registry dns ingress

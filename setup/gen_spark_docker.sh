@@ -24,8 +24,8 @@ then
 	exit -1
 fi
 
-tar xzf spark-3.1.2-bin-hadoop3.2.tgz
-cd spark-3.1.2-bin-hadoop3.2
+tar xzf $INSTALLER_FILE 
+cd spark-$SPARK_VER-bin-hadoop$HADOOP_VER
 
 cat << EOF > Dockerfile 
 #

@@ -30,3 +30,5 @@ echo "lxd setup nested microk8s"
 sleep 180 # give the instance time to boot
 sudo lxc exec microk8s -- sudo snap install microk8s --classic
 sudo lxc exec microk8s -- sudo microk8s enable storage registry dns ingress
+
+sudo snap install curl gh git-repo

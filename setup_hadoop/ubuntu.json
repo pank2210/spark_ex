@@ -1,0 +1,47 @@
+{
+    "DiskProvisioning": "thin",
+    "IPAllocationPolicy": "dhcpPolicy",
+    "IPProtocol": "IPv4",
+    "PropertyMapping": [
+        {
+            "Key": "instance-id",
+            "Value": "id-ovf"
+        },
+        {
+            "Key": "hostname",
+            "Value": "k8s-master"
+        },
+        {
+            "Key": "seedfrom",
+            "Value": ""
+        },
+        {
+            "Key": "public-keys",
+            "Value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCsaG+53ZUe9ZczZkQGG2UW946eGRKQet/B71rLszODEY+tTwS5CbVfDbcDnWhXdiuWO/AAVSGU1mWJlUqoirU+rYbxLE3sIElqJMSDH9CjhCFfjGg9x42chHZa0CtjA3ADjxFfHOp5bgwsZBUesn15x3FDXLNB/EcW8ih6nYLENzZbzaZX14y79Zsj0TPPkoWV1C0Cy80ydmLMYjuaY6udpWpQKZ+B1O5BuNFYjwA4GCdmF6vXy2ja0jO0bsdsXD0HCgMXVsz6eSfSjZOqcpJS1F2aV4mTNWgptysckWf8xvpH7epF/jPRleXfTuEw4lIv/oNzVIUUbPnSD8BAayqiPgaVxITFpHM0TVZxs7NT+o9tC5U6cD+i93Le2vWnDjTSFOYqW2+41G6bQfmW7P/qNTNGilBvW2b6EAwrBIt/4FF3RMkc+sTn6Tbu0EuVGKdxMmOdXqbzPL03qzMNey4CGCF0kOgPmW0FIFdJBeAzlJ7JzHAHE1QrzbDYSs52QKs= mumdi2610@Pankajs-Mac-mini.local"
+        },
+        {
+            "Key": "user-data",
+            "Value": ""
+        },
+        {
+            "Key": "username",
+            "Value": "admin"
+        },
+        {
+            "Key": "password",
+            "Value": "VMware1!"
+        }
+    ],
+    "NetworkMapping": [
+        {
+            "Name": "pp_port_group_02",
+            "Network": "pp_port_group_02"
+        }
+    ],
+    "MarkAsTemplate": true,
+    "PowerOn": false,
+    "InjectOvfEnv": false,
+    "WaitForIP": false,
+    "Name": "k8s-master"
+}
+

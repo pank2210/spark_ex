@@ -1,0 +1,5 @@
+
+1. download base ISO OS image i.e. ubuntu 20.04 ISO image from ubuntu
+2. Create new VM using vSphere GUI or esxi using ISO OS base image
+3. Start the VM and do a ububtu install. Make user/passwd is setup, DHCP ipv4 network is setup and /data volume is created
+4. Refer to https://www.domstamand.com/installing-a-kubernetes-cluster-on-vmware-vsphere-and-what-ive-learned/ follow instatruction to setup vm image to install kube, docker and all required setup. Finally setup master and worker for kube as per instruction
